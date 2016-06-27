@@ -274,9 +274,11 @@ You can get a more accurate representation by using a different algorithm for ca
 
 with the line
 
-	``` python
-					delta = color.deltaE_ciede2000(selfie_pixel,map_pixel)
-	```
+``` python
+				delta = color.deltaE_ciede2000(selfie_pixel,map_pixel)
+```
+
+![image](images/cide2000.png)
 
 ## What it looks like in RGB colour space
 
