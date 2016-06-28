@@ -1,8 +1,8 @@
-# Example Resource
+# Minecraft Selfies
 
 ![](cover.png)
 
-Short description of the resource
+In this resource you will use the PiCamera to take low resolution selfies and then with some additional Python code you will render the image using blocks in Minecraft.
 
 ## Licence
 
@@ -12,4 +12,4 @@ Unless otherwise specified, everything in this repository is covered by the foll
 
 ***Example Resource*** by the [Raspberry Pi Foundation](http://www.raspberrypi.org) is licenced under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
 
-Based on a work at https://github.com/raspberrypilearning/example-resource
+Based on a work at https://github.com/raspberrypilearning/minecraft-selfies

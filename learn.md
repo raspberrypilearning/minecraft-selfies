@@ -1,7 +1,7 @@
-By creating a something with your Raspberry Pi you will learn:
+By completing the Minecraft Selfies resource, you will learn:
 
-- How to set up a Raspberry Pi camera
-- How to use GPIO pins
-- How to create a circuit on a breadboard
-- Controlling GPIO pins with Python code
-- Controlling the camera module with Python code
+- How to take low resolution images with the PiCamera
+- How to convert images into RGB values
+- How to convert RGB values to Lab colour space
+- How to iterate over multiple lists and compare values
+
