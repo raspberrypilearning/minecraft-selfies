@@ -4,7 +4,7 @@ In this resource you'll use the Pi Camera to take a selfie of yourself, and then
 
 ## Importing some modules
 
-For this project you'll need to begin by importing a few modules. Most of them are pre-installed in Raspbian, but you need to install `skimage` yourself by following the instructions on the software installation page.
+For this project you'll need to begin by importing a few modules. Most of them are pre-installed in Raspbian, but you need to install `skimage` yourself by following the instructions on the [software installation page](https://www.raspberrypi.org/learning/minecraft-selfies/requirements/software/).
 
 1. Open up Python 3 (IDLE) from the Menu.
 1. Create a new file by clicking on *File* > *New File*.
