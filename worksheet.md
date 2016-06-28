@@ -1,6 +1,6 @@
 # Minecraft selfies
 
-In this resource you'll use the PiCamera to take a selfie of yourself, and then with a little bit of Python3 code, you'll render the picture in Minecraft blocks.
+In this resource you'll use the PiCamera to take a selfie of yourself, and then with a little bit of Python3 code, you'll render the picture in a gigantic wall of Minecraft blocks.
 
 ## Importing some modules
 
@@ -23,7 +23,7 @@ For this project you'll need to begin by importing a few modules. Most of them a
 
 The first stage is fairly simple. You're just going to use the PiCamera to take a selfie.
 
-1. Below your module imports you can set up the `camera` object and set it's resolution
+1. Below your module imports you can set up the `camera` object and set it's resolution with the following two lines:
 
 	``` python
 	camera = PiCamera()
@@ -35,11 +35,13 @@ The first stage is fairly simple. You're just going to use the PiCamera to take 
 
 	``` python
 	camera.start_preview()
-	sleep(15)
+	sleep(5)
 	camera.capture('selfie.jpg')
 	camera.close()
 	```
 1. That's the first part of the script finished. You can run this and take a photo of your self to test it out. The image will appear in whichever directory you have saved your python script. It will appear to be very low resolution, but that's okay.
+
+![image](images/selfie.jpg)
 
 ## Mapping colours to blocks.
 
@@ -48,7 +50,7 @@ The first stage is fairly simple. You're just going to use the PiCamera to take 
 
 ![big colour map](images/colour_map_large.png)
 
-1. Each pixel on the colour map is the same (_average_) colour as a minecraft block. The block in the top left is *dirt* for instance.
+1. Each pixel on the colour map is the same _average_ colour as a minecraft block. The block in the top left is *dirt* for instance.
 
 1. You need to load both these images into the program, so that they become represented by lists of numbers. This is where the `skimage` module becomes useful.
 
@@ -75,7 +77,7 @@ The first stage is fairly simple. You're just going to use the PiCamera to take 
 			[106,  95,  87]],
 	```
 
-1. This is a representation of the colours in the colour map. So the first row `86, 74, 46` represents the first pixel in the colour map. It is made up of three numbers. The first is the amount of *red*, the second the amount of *green* and the third the amount of *blue*. Overall this gives a brown colour.
+1. This is a representation of the colours in the colour map. So the first row `86, 74, 46` represents the first pixel in the colour map. It is made up of three numbers. The first is the amount of *red*, the second the amount of *green* and the third the amount of *blue*. Overall this gives a brown colour. We call this RBG colour.
 
 1. You could look at the pixel colours in your selfie as well.
 
@@ -96,17 +98,17 @@ _Don't worry if this next bit doesn't make much sense or appears too complicated
 
 	![fig2](images/figure_2.png)
 
-1. It stands to reason that the closest dot in 3D space to the original colour, has the closest colour to the first dot.
+1. It stands to reason that the closest dot in 3D space to the original colour, would appear to be the closest colour visually.
 
-1. Unfortunately this is not the case. While RGB values are nice as we can fairly easily guess colours - for instance R - 255, G- 255, B - 0 you could probably guess as being pinkish, they are not very useful for comparing colours. Have a look at the graph below.
+1. Unfortunately this is not the case. While RGB values are useful for us when describing colours, they are not very useful for comparing colours. Have a look at the graph below.
 
 	![fig3](images/figure_3.png)
 
-1. Although the dark grey and light grey dots appear closer to each other with regard to colour, they are actually 173 units apart. Both light grey and dark grey dots are closer to the red (150 part) than they are to each other.
+1. Although the dark grey and light grey dots appear to be of a more similar colour, they are actually 173 units apart. Both light grey and dark grey dots are closer to the red (150 units) than they are to each other.
 
-1. For this reason comparing RGB values is not very useful, as the colours that are close to each other in 3D space may visually appear to be very different. (You'll be able to see a comparison picture at the end).
+1. For this reason comparing RGB values is not very useful, as the colours that are close to each other in 3D space may visually appear to be very different.
 
-1. For this reason we convert the RGB values into what are known as [lab colour space](https://en.wikipedia.org/wiki/Lab_color_space). In lab colour space, distance between colours in 3D space is very similar to our own perception of colours.
+1. For this reason we convert the RGB values into what are known as [lab colour space](https://en.wikipedia.org/wiki/Lab_color_space). In lab colour space, distance between colours in 3D space is very similar to our own perception of what could be called similar colours.
 
 ## Converting to lab colour space
 
@@ -278,11 +280,11 @@ with the line
 				delta = color.deltaE_ciede2000(selfie_pixel,map_pixel)
 ```
 
-![image](images/cide2000.png)
+![image](images/ciede2000.png)
 
 ## What it looks like in RGB colour space
 
-Here's an example of what the image looks like if RGB colour space is used.
+Here's an example of what the image looks like if RGB colour space is used. In this example there's not a *huge* difference, but if you want to experiment with higher resolution images then there would definitely be a difference.
 
 ![image](images/rgb_colour_space.png)
 
@@ -354,7 +356,7 @@ for i, selfie_column in enumerate(selfie_lab):
 		distance = 300
 		for k, map_column in enumerate(map_lab):
 			for l, map_pixel in enumerate(map_column):
-				delta = color.deltaE_ciede2000(selfie_pixel,map_pixel)
+				delta = color.deltaE_cie76(selfie_pixel,map_pixel)
 				if delta < distance:
 					distance = delta
 					block = colours[(k,l)]
