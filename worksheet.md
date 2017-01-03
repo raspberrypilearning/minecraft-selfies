@@ -267,11 +267,11 @@ These three lines will go over every pixel in the selfie and store each value of
 
 You can get a more accurate representation by using a different algorithm for calculating the `delta` value. This will be slower, but might give you a better result (so be very patient).
 
-1. Replace the line
+Replace the line
 
-	``` python
-					delta = color.deltaE_ciede2000(selfie_pixel,map_pixel)
-	```
+``` python
+				delta = color.deltaE_cie76(selfie_pixel,map_pixel)
+```
 
 with the line
 
