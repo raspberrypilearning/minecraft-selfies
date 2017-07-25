@@ -1,0 +1,34 @@
+---
+title: Minecraft Selfies
+hero_image: images/banner.png
+description: Make a selfie wall in Minecraft with Python
+original_url: https://raspberrypi.org/learning/minecraft-selfies
+theme: red
+duration: 2
+listed: false
+ingredient: false
+copyedit: true
+curriculum: creator, design-0, programming-0, phys-comp-0, manufacture-0, community-0
+interests: ''
+technologies: rpi, physical computing, python
+site_areas: ''
+steps:
+- title: Introduction
+- title: What you will need
+- title: Minecraft Selfies
+- title: Importing some modules
+- title: Taking a selfie
+- title: Mapping colours to blocks
+- title: Finding the nearest colour
+- title: Converting to Lab colour space
+- title: Mapping the blocks
+- title: Starting the Minecraft API
+- title: A better (but slower) algorithm
+- title: What it looks like in RGB colour space
+- title: The full code
+- title: Taking a picture
+- title: Rendering the picture
+- title: Iterate over image and then over map. Find closest colour from map, and then
+    look up that block and place
+- title: What next?
+
