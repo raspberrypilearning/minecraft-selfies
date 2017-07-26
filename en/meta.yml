@@ -26,9 +26,5 @@ steps:
 - title: A better (but slower) algorithm
 - title: What it looks like in RGB colour space
 - title: The full code
-- title: Taking a picture
-- title: Rendering the picture
-- title: Iterate over image and then over map. Find closest colour from map, and then
-    look up that block and place
 - title: What next?
 
