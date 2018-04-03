@@ -8,11 +8,15 @@ duration: 2
 listed: true
 ingredient: false
 copyedit: true
-curriculum: creator, design-0, programming-0, phys-comp-0, manufacture-0, community-0
+curriculum: 3, design-0, programming-3, phys-comp-2, manufacture-0, community-0
 interests: photography
-technologies: python
-site_areas: ''
-steps:
+technologies: raspberry-pi, python, pi-camera
+site_areas: projects
+hardware: raspberry-pi, pi-camera
+software: python
+version: 3
+last_tested: 2017-01-01
+steps: 
 - title: Introduction
 - title: What you will need
 - title: Minecraft Selfies
@@ -27,4 +31,3 @@ steps:
 - title: What it looks like in RGB colour space
 - title: The full code
 - title: What next?
-
