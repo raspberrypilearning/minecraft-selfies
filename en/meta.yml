@@ -16,9 +16,10 @@ hardware: raspberry-pi, pi-camera
 software: python
 version: 3
 last_tested: 2017-01-01
-steps: 
+steps:
 - title: Introduction
 - title: What you will need
+  completion: engaged
 - title: Minecraft Selfies
 - title: Importing some modules
 - title: Taking a selfie
@@ -29,5 +30,6 @@ steps:
 - title: Starting the Minecraft API
 - title: A better (but slower) algorithm
 - title: What it looks like in RGB colour space
+  completion: internal
 - title: The full code
 - title: What next?
